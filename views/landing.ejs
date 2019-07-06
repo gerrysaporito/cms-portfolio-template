@@ -1,0 +1,103 @@
+<% include ./partials/header %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/landing.css">
+</head>
+<body>
+<% include ./partials/landingNavbar %>
+
+	<!--------------------------- Landing Page --------------------------->
+	<div id="jumbo">
+		<div id="jumboBack"><h1>
+		<% if(userInfo && userInfo.opening) { %>
+			<%= userInfo.opening %>
+		<% } %>
+		</h1></div>
+	</div>
+
+	<!--------------------------- Body --------------------------->
+	<div id="body">
+		<!--------------------- introduction --------------------->
+		<div id="intro" class="sect">
+			<div id="introContent">
+				<h1>Hey There! How are you?</h1>
+				<h3>A little bit about me</h3>
+				<p>
+					<% if(userInfo && userInfo.about) { %>
+					<%- userInfo.about %>
+					<% } %>
+				</p>
+			</div>
+			<% if(userInfo && userInfo.image) { %>
+				<img src="<%= userInfo.image %>">
+			<% } %>
+		</div>
+
+		<!--------------------- experience --------------------->
+		<!--Template Container
+			<div class="expCont">
+				<img src="./images/[image name].[ext]">
+				<div class="expContent">
+					<h3>Experience Title</h3>
+					<p>
+						Content
+					</p>
+				</div>
+			</div>
+		 -->
+		<div id="experience" class="sect">
+			<h2>My experiences have made me who I am today.</h2>
+			<% if(workExperiences) { %>
+			 <% workExperiences.reverse().forEach(function(work) { %>
+				<div class="expCont">
+					<a href="<%= work.link %>"><img src="<%= work.image %>"></a>
+					<div class="expContent">
+						<a href="<%= work.link %>"><h3><%= work.company %></h3></a>
+						<h5><i><%= work.date %></i></h5>
+						<p>
+							<%= work.description %>
+						</p>
+					</div>
+				</div>
+				<% }) %>
+				<% } %>
+		</div>
+
+		<!--------------------- interests --------------------->
+		<div id="interests" class="sect">
+			<div id="experience" class="sect">
+				<h2>What I do in my freetime.</h2>
+				<% if(experiences) { %>
+				 <% experiences.reverse().forEach(function(experience) { %>
+					<div class="expCont">
+						<a href="<%= experience.link %>"><img src="<%= experience.image %>"></a>
+						<div class="expContent">
+							<a href="<%= experience.link %>"><h3><%= experience.name %></h3></a>
+							<h5><i><%= experience.sub %></i></h5>
+							<p>
+								<%= experience.description %>
+							</p>
+						</div>
+					</div>
+					<% }) %>
+					<% } %>
+			</div>
+		</div>
+	</div>
+	</div>
+		<!--------------------- Footer --------------------->
+	<div id="footer" class="sect">
+		<div id="footerContent">
+			<p>Let's talk:</p>
+			<div id="footerSocial">
+				<% if(userInfo) { %>
+				<a class="icon" href="<%= userInfo.linkedIn %>" target="_blank"><i class="fab fa-linkedin"></i></a>
+				<a class="icon" href="<%= userInfo.facebook %>" target="_blank"><i class="fab fa-facebook-square"></i></a>
+        <a class="icon" href="mailto:<%= userInfo.email %>?Subject=Hey%20There!" target="_blank"><i class="fas fa-envelope"></i></a>
+				<% } %>
+			</div>
+			<p id="copyright">Copyright <%=new Date().getFullYear()%>. All rights Reserved.</p>
+		</div>
+	</div>
+
+
+</body>
+</html>

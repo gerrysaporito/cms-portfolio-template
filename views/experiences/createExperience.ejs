@@ -1,0 +1,34 @@
+<% include ../partials/header %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/createEdit.css">
+</head>
+<body>
+<% include ../partials/navbar %>
+
+<div class="cont">
+  <div class="row">
+      <h1 style="text-align: center">Create a New Experience</h1>
+      <div style="width: 30%; margin: 25px auto;">
+        <form action="/create/experience" method="POST">
+            <div class="form-group">
+              <input class="form-control" type="text" name="experience[name]" placeholder="Experience Name" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="experience[sub]" placeholder="Sub Header (if applicable)" required>
+              </div>
+            <div class="form-group">
+                <textarea class="form-control" name="experience[description]" placeholder="Description" rows="15" required></textarea>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="experience[link]" placeholder='Link to Experience (if applicable)' required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="experience[image]" placeholder='Image Source (350x200px, Include "https://")' required>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-lg btn-primary btn-block">Create</button>
+            </div>
+        </form>
+        <a href="/create">Go Back</a>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,143 @@
+body {
+  font-family: 'Raleway', sans-serif;
+	padding-top: 10px;
+	margin-left: 0;
+  overflow-x: hidden;
+}
+
+a {
+	cursor: pointer;
+}
+
+/*----------------------------Jumbo------------------------*/
+#jumbo {
+	width: 100vw;
+}
+
+#jumboBack {
+	background-image: url("/pictures/wood.jpg");
+	margin: 50px 0 0 0;
+	height: 80vh;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#jumbo h1 {
+	color: black;
+	font-size: 90px;
+  font-weight: normal;
+}
+
+/*----------------------------Content------------------------*/
+#body {
+	width: 850px;
+	margin: 0 auto;
+  padding: 50px 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.sect {
+padding-top: 3vh;
+}
+/*----------intro----------*/
+#intro {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#intro h1,h3 {
+  margin-bottom: 30px;
+}
+
+#introContent {
+	width: 70%;
+}
+
+#intro img {
+	width: 25%;
+  height: auto;
+  border-radius: 50%;
+}
+
+/*----------experience----------*/
+#experince {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.expCont {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: center;
+	margin-top: 40px;
+}
+
+.expContent {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 550px;
+}
+
+.expCont img {
+	width: 250px;
+	border-radius: 10px;
+	border: 2px solid rgba(120,120,120,0.5);
+	margin-right: 50px;
+}
+
+/* -------------------------Viewports------------------------ */
+@media only screen and (max-width: 600px) {
+  /*----------------------------Jumbo------------------------*/
+  #jumbo h1 {
+  	font-size: 90px;
+  }
+  .hideItem {display: none;}
+  /*----------intro----------*/
+  #intro h1,h3 {
+    margin-bottom: 20px;
+  }
+
+  /*----------experience----------*/
+  #experince {
+  	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
+  	align-items: center;
+  }
+
+  .expCont {
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: center;
+  	margin-top: 40px;
+    width: 100%;
+  }
+
+  .expContent {
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	width: 550px;
+  }
+
+  .expCont img {
+  	width: 250px;
+  	border-radius: 10px;
+  	border: 2px solid rgba(120,120,120,0.5);
+  	margin-right: 50px;
+  }
+}

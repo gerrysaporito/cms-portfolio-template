@@ -1,0 +1,39 @@
+<% include ../partials/header %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/createEdit.css">
+</head>
+<body>
+<% include ../partials/navbar %>
+<div class="cont">
+  <div class="row">
+      <h1 style="text-align: center">Edit <%= userInfo.name %></h1>
+      <div style="width: 30%; margin: 25px auto;">
+        <form action="/edit/userInfo/<%= userInfo._id %>?_method=PUT" method="POST">
+          <div class="form-group">
+            <input class="form-control" type="text" name="userInfo[name]" placeholder="Your Name" value="<%= userInfo.name %>" required>
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" name="userInfo[image]" placeholder="Image URL (Include 'https://', Square Image)" value="<%= userInfo.image %>" required>
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" name="userInfo[opening]" placeholder="Opening Quote" value="<%= userInfo.opening %>" required>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" name="userInfo[about]" placeholder="Your About" rows="15" required><%= userInfo.about %></textarea>
+          </div>
+          <div class="form-group">
+              <input class="form-control" type="text" name="userInfo[email]" placeholder='Email' value="<%= userInfo.email %>" required>
+          </div>
+          <div class="form-group">
+              <input class="form-control" type="text" name="userInfo[linkedIn]" placeholder='LinkedIn URL' value="<%= userInfo.linkedIn %>" required>
+          </div>
+          <div class="form-group">
+              <input class="form-control" type="text" name="userInfo[facebook]" placeholder='Facebook URL' value="<%= userInfo.facebook %>" required>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-lg btn-primary btn-block">Edit</button>
+          </div>
+        </form>
+        <a href="/edit/userInfo">Back</a>
+      </div>
+  </div>
+</div>

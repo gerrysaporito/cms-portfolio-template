@@ -1,0 +1,45 @@
+<% include ../partials/header %>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/createEdit.css">
+</head>
+<body>
+<% include ../partials/navbar %>
+<div class="ui main text container" id="privSect">
+    <h1>Edit a Work Experience.</h1>
+    <div class="ui top attached segment">
+        <div class="ui divided items">
+        <% if(workExperiences) { %>
+          <% workExperiences.reverse().forEach(function(workExperience) { %>
+                <div class="item">
+                    <div class="image">
+                        <img src="<%= workExperience.image %>">
+                    </div>
+                    <div class="content">
+                        <a class="header" href="/edit/work-experiences/<%= workExperience._id %>"><%= workExperience.company %></a>
+                        <div class="meta">
+                            <span><%= workExperience.position %></span>
+                        </div>
+                        <div class="meta">
+                                <span><%= workExperience.date %></span>
+                            </div>
+                        <div class="description">
+                            <p><%- workExperience.description %></p>
+                        </div>
+                        <div class="extra">
+                            <a href="/edit/work-experiences/<%= workExperience._id %>" class="ui floated basic blue button">
+                            Edit <i class="right chevron icon"></i>
+                        </a>
+                        </div>
+                        <div class="extra">
+                            <form class="deleteForm" action="/edit/work-experiences/<%= workExperience._id %>?_method=DELETE" method="POST">
+                                <button class="ui floated basic red button">Delete <i class="right chevron icon"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        <% } %>
+        </div>
+    </div>
+    <a href="/">Back</a>
+</div>

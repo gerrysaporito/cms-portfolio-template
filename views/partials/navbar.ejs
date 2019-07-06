@@ -1,0 +1,24 @@
+<!--------------------------- Navbar --------------------------->
+<div id="nav">
+  <div id="navCont">
+    <% if(currentUser){  %>
+      <% if(userInfo){  %>
+        <a id="brand" href="/">Welcome <%= userInfo.name %></a>
+        <% } %>
+    <% } else { %>
+      <a id="brand" href="/">Welcome</a>
+    <% } %>
+  </div>
+  <div id="navSocial">
+    <% if(currentUser){  %>
+        <a id="navbarItem" href="/create">Create</a>
+        <a id="navbarItem" href="/edit">Edit</a>
+        <a id="navbarItem" href="/logout">Logout</a>
+    <% } else { %>
+      <% if(userInfo) { %>
+        <a class="icon" href="<%= userInfo.linkedIn %>"><i class="fab fa-linkedin"></i></a>
+        <a class="icon" href="<%= userInfo.facebook %>"><i class="fab fa-facebook-square"></i></a>
+      <% } %>
+    <% } %>
+  </div>
+</div>

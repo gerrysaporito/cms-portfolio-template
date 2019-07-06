@@ -1,0 +1,38 @@
+/*----------footer----------*/
+#footer {
+	padding-top: 50px;
+	width: 100vw;
+	height: 220px;
+	background-color: rgba(160,160,160,0.8);
+	color: white;
+}
+#footerContent {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#footerContent p {
+	font-size: 20px;
+	text-align: center;
+	width: 80vw;
+}
+
+#footerContent a {
+	font-size: 30px;
+	margin: 0 30px;
+	color: white;
+}
+
+#footerSocial {
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#footerContent #copyright {
+	margin-top: 20px;
+	font-size: 15px;
+}

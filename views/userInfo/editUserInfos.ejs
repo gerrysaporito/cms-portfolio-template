@@ -1,0 +1,58 @@
+<% include ../partials/header %>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/createEdit.css">
+</head>
+<body>
+<% include ../partials/navbar %>
+<div class="ui main text container" id="privSect">
+    <h1>Edit your Personal Info</h1>
+    <div class="ui top attached segment">
+        <div class="ui divided items">
+        <% userInfo.reverse().forEach(function(userInfo) { %>
+            <div class="item">
+                <div class="content">
+                    <div class="description">
+                        Your Name:  <span><%= userInfo.name %></span>
+                    </div>
+                    <div class="description">
+                        <ul>
+                            <li>Image Source:     <span><%= userInfo.image %></span></li>
+                        </ul>
+                    </div>
+                    <div class="description">
+                        <ul>
+                            <li>Opening Quote:     <span><%= userInfo.opening %></span></li>
+                        </ul>
+                    </div>
+                    <div class="description">
+                        <ul>
+                            <li>About:      <span><%= userInfo.about %></span></li>
+                        </ul>
+                    </div>
+                    <div class="description">
+                        <ul>
+                            <li>Email:      <span><%= userInfo.email %></span></li>
+                        </ul>
+                    </div>
+                    <div class="description">
+                        <ul>
+                            <li>LinkedIn:      <span><%= userInfo.linkedIn %></span></li>
+                        </ul>
+                    </div>
+                    <div class="description">
+                        <ul>
+                            <li>Facebook:      <span><%= userInfo.facebook %></span></li>
+                        </ul>
+                    </div>
+                    <div class="extra">
+                        <a href="/edit/userInfo/<%= userInfo._id %>" class="ui floated basic blue button">
+                            Edit <i class="right chevron icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+        </div>
+    </div>
+    <a href="/">Back</a>
+</div>
