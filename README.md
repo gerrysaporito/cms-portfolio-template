@@ -1,4 +1,4 @@
-# portfolioWebsiteTemplate
+# Dynamic Portfolio Website Template
 <h3>Hey, and Welcome!</h3>
 <p>
 This is a website portfolio template where users don't need to code to update their page!. <br>
@@ -35,3 +35,4 @@ Heroku is a free resource to host your web applications that have a back end, an
 <li>Next to <i>Deployment Method</i>, select Github.</li>
 <li>Next to <i>App Connected to Github</i> in the search box, enter your Github repository name and click search. Select your repository.</li>
 <li>Next to <i>Automatic deploys</i>, select <i>Enable Automatic Deploy</i> button</li>
+</ol>
