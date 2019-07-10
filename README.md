@@ -36,3 +36,10 @@ Heroku is a free resource to host your web applications that have a back end, an
 <li>Next to <i>App Connected to Github</i> in the search box, enter your Github repository name and click search. Select your repository.</li>
 <li>Next to <i>Automatic deploys</i>, select <i>Enable Automatic Deploy</i> button</li>
 </ol>
+  <p>Congratulations! Your app is now deployed! Now to customize your webpage</p>
+  
+  <h3>Setting Up Your Information</h3>
+  <p>You made it this far, and you're almost done! Lets finish this!</p>
+  <ol>
+  <li>At the end of your url after .com, add /register and reigster your username and password<li>
+  <li>
