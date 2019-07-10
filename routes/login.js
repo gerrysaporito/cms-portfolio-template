@@ -31,31 +31,31 @@ router.get("/logout", function(req, res){
     res.redirect("/");
 })
 
-// //========================REGISTER ROUTES===========================//
-// router.get("/register", function(req, res){
-//   UserInfo.findOne({"page":"Landing"}, function(err, userInfo){
-//       if(err){
-//           console.log(err);
-//       } else {
-//         res.render("user/register", {page: "register", userInfo:userInfo});
-//       }
-//   });
-// });
-//
-// router.post("/register", function(req, res){
-//     let username = {username: req.body.username};
-//     User.register(new User(username), req.body.password, function (err, user){
-//         if(err){
-//             console.log(err);
-//             req.flash("error", err.message);
-//             res.redirect("/register");
-//         } else {
-//             passport.authenticate("local")(req, res, function(){
-//                 req.flash("success", "Welcome Gerry" /* + user.username */);
-//                 res.redirect("/");
-//             });
-//         }
-//     });
-// });
+//========================REGISTER ROUTES===========================//
+router.get("/register", function(req, res){
+  UserInfo.findOne({"page":"Landing"}, function(err, userInfo){
+      if(err){
+          console.log(err);
+      } else {
+        res.render("user/register", {page: "register", userInfo:userInfo});
+      }
+  });
+});
+
+router.post("/register", function(req, res){
+    let username = {username: req.body.username};
+    User.register(new User(username), req.body.password, function (err, user){
+        if(err){
+            console.log(err);
+            req.flash("error", err.message);
+            res.redirect("/register");
+        } else {
+            passport.authenticate("local")(req, res, function(){
+                req.flash("success", "Welcome Gerry" /* + user.username */);
+                res.redirect("/");
+            });
+        }
+    });
+});
 
 module.exports = router;
