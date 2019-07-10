@@ -31,4 +31,7 @@ Heroku is a free resource to host your web applications that have a back end, an
 <li>Open up your cloned repository in your  preferred text editor, and navigate to /config/keys.js file. Notice that there is an empty string field in next to the mongoURI key.</li>
 <li>Paste the mongoURI key you copied, and replace the <dbuser> with the username and the <dbpassword> with the password you chose (NOTE: remove the angle brackets <>).</li>
 <li>Push your repo to your Github.</li>
-  <li>Head back to Heroku and navigate to the <strong>Deploy</strong> Tab
+<li>Head back to Heroku and navigate to the <strong>Deploy</strong> Tab</li>
+<li>Next to <i>Deployment Method</i>, select Github.</li>
+<li>Next to <i>App Connected to Github</i> in the search box, enter your Github repository name and click search. Select your repository.</li>
+<li>Next to <i>Automatic deploys</i>, select <i>Enable Automatic Deploy</i> button</li>
